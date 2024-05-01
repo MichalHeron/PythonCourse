@@ -74,6 +74,15 @@
 # highest even exercise
 
 def highest_even(li):
+    """
+    A function that takes a list of numbers, filters out the odd numbers, and returns the highest even number in the list.
+
+    Parameters:
+    li (list): A list of integers.
+
+    Returns:
+    int: The highest even number in the input list.
+    """
     even_list = []
     for element in li:
         if element % 2 == 0:
