@@ -45,23 +45,24 @@
 
 # tesla exercise
 
-age_input = input("What is your age?: ")
-
-
-def check_driver_age(age="0"):
-    '''
-    This function will take an age as an input and tell you if you are too young to drive this car.
-    '''
-    if int(age) < 18:
-        print("Sorry, you are too young to drive this car. Powering off")
-    elif int(age) > 18:
-        print("Powering On. Enjoy the ride!")
-    elif int(age) == 18:
-        print("Congratulations on your first year of driving. Enjoy the ride!")
-
-
-check_driver_age(age_input)
-
+# age_input = input("What is your age?: ")
+#
+#
+# def check_driver_age(age="0"):
+#     '''
+#     This function will take an age as an input and tell you if you are too young to drive this car.
+#     '''
+#     if int(age) < 18:
+#         print("Sorry, you are too young to drive this car. Powering off")
+#     elif int(age) > 18:
+#         print("Powering On. Enjoy the ride!")
+#     elif int(age) == 18:
+#         print("Congratulations on your first year of driving. Enjoy the ride!")
+#
+#
+# check_driver_age(age_input)
+#
+# print(check_driver_age.__doc__)
 #1. Wrap the above code in a function called checkDriverAge(). Whenever you call this function, you will get prompted for age.
 # Notice the benefit in having checkDriverAge() instead of copying and pasting the function everytime?
 
@@ -70,4 +71,14 @@ check_driver_age(age_input)
 #it returns "Powering On. Enjoy the ride!"
 #also make it so that the default age is set to 0 if no argument is given.
 
+# highest even exercise
 
+def highest_even(li):
+    even_list = []
+    for element in li:
+        if element % 2 == 0:
+            even_list.append(element)
+    return max(even_list)
+
+
+print(highest_even([10, 2, 3, 4, 8, 11, 20]))
