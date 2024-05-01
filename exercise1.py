@@ -49,6 +49,9 @@ age_input = input("What is your age?: ")
 
 
 def check_driver_age(age="0"):
+    '''
+    This function will take an age as an input and tell you if you are too young to drive this car.
+    '''
     if int(age) < 18:
         print("Sorry, you are too young to drive this car. Powering off")
     elif int(age) > 18:
@@ -66,3 +69,5 @@ check_driver_age(age_input)
 #checkDriverAge(92);
 #it returns "Powering On. Enjoy the ride!"
 #also make it so that the default age is set to 0 if no argument is given.
+
+
