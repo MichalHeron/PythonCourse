@@ -164,14 +164,34 @@
 # print(my_dict)
 
 ###
-some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
-duplicates = []
-for value in some_list:
-    if some_list.count(value) > 1:
-        if value not in duplicates:
-            duplicates.append(value)
-print(duplicates)
+# some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
+# duplicates = []
+# for value in some_list:
+#     if some_list.count(value) > 1:
+#         if value not in duplicates:
+#             duplicates.append(value)
+# print(duplicates)
+#
+# duplicates2 = list(set(value for value in some_list if some_list.count(value) > 1 ))
+# print(duplicates2)
 
-duplicates2 = list(set(value for value in some_list if some_list.count(value) > 1 ))
-print(duplicates2)
 
+
+# Create an @authenticated decorator that only allows the function to run is user1 has 'valid' set to True:
+user1 = {
+    'name': 'Sorna',
+    'valid': True #changing this will either run or not run the message_friends function.
+}
+
+
+def authenticated(fn):
+    def wrapper(*args, **kwargs):
+        if args[0]['valid']:
+            return fn(*args, **kwargs)
+    return wrapper
+
+@authenticated
+def message_friends(user):
+    print('message has been sent')
+
+message_friends(user1)
