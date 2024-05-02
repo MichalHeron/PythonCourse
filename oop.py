@@ -140,17 +140,38 @@
 
 
 ##### square using lambda
+#
+# my_list = [5, 4, 3]
+#
+#
+# print(list(map(lambda item: item**2, my_list)))
+#
+#
+# # list sorting
+#
+# a = [(0,2), (4,3), (10,-1), (9,9)]
+#
+# print(sorted(a, key=lambda x: x[1]))
 
-my_list = [5, 4, 3]
+## comprehesion
 
+# my_list = [num**2 for num in range(0, 100) if num % 2 == 0]
+# print(my_list)
+#
+# ## in dict
+#
+# my_dict = {num:num*2for num in [1,2,3,4,5]}
+# print(my_dict)
 
-print(list(map(lambda item: item**2, my_list)))
+###
+some_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
+duplicates = []
+for value in some_list:
+    if some_list.count(value) > 1:
+        if value not in duplicates:
+            duplicates.append(value)
+print(duplicates)
 
+duplicates2 = list(set(value for value in some_list if some_list.count(value) > 1 ))
+print(duplicates2)
 
-# list sorting
-
-a = [(0,2), (4,3), (10,-1), (9,9)]
-
-print(sorted(a, key=lambda x: x[1]))
-
-##
