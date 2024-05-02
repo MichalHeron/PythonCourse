@@ -98,42 +98,59 @@
 #
 # my_pets.walk()
 
+#
+# from functools import reduce
+#
+# #1 Capitalize all of the pet names and print the list
+# my_pets = ['sisi', 'bibi', 'titi', 'carla']
+#
+#
+# def capitalize(name):
+#     return name.capitalize()
+#
+#
+# print(list(map(capitalize, my_pets)))
+#
+# #2 Zip the 2 lists into a list of tuples, but sort the numbers from lowest to highest.
+# my_strings = ['a', 'b', 'c', 'd', 'e']
+# my_numbers = [5, 4, 3, 2, 1]
+#
+# print(list(zip(my_strings, sorted(my_numbers))))
+#
+# #3 Filter the scores that pass over 50%
+# scores = [73, 20, 65, 19, 76, 100, 88]
+#
+#
+# def filter_scores(score):
+#     return score > 50
+#
+#
+# print(list(filter(filter_scores, scores)))
+#
+# #4 Combine all of the numbers that are in a list on this file using reduce (my_numbers and scores). What is the total?
+# list2 = scores + my_numbers
+# print(list2)
+#
+#
+# def sum_numbers(acc, number):
+#     return acc + number
+#
+#
+# print(reduce(sum_numbers, list2, 0))
 
-from functools import reduce
 
-#1 Capitalize all of the pet names and print the list
-my_pets = ['sisi', 'bibi', 'titi', 'carla']
+##### square using lambda
 
-
-def capitalize(name):
-    return name.capitalize()
+my_list = [5, 4, 3]
 
 
-print(list(map(capitalize, my_pets)))
-
-#2 Zip the 2 lists into a list of tuples, but sort the numbers from lowest to highest.
-my_strings = ['a', 'b', 'c', 'd', 'e']
-my_numbers = [5, 4, 3, 2, 1]
-
-print(list(zip(my_strings, sorted(my_numbers))))
-
-#3 Filter the scores that pass over 50%
-scores = [73, 20, 65, 19, 76, 100, 88]
+print(list(map(lambda item: item**2, my_list)))
 
 
-def filter_scores(score):
-    return score > 50
+# list sorting
 
+a = [(0,2), (4,3), (10,-1), (9,9)]
 
-print(list(filter(filter_scores, scores)))
+print(sorted(a, key=lambda x: x[1]))
 
-#4 Combine all of the numbers that are in a list on this file using reduce (my_numbers and scores). What is the total?
-list2 = scores + my_numbers
-print(list2)
-
-
-def sum_numbers(acc, number):
-    return acc + number
-
-
-print(reduce(sum_numbers, list2, 0))
+##
