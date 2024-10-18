@@ -152,12 +152,8 @@ count_open_orders = 0
 orders_amount_on_begin = len(batch)
 point = 0
 add_point_for_not_belong_to_order = 1
-minus_point_for_belong_to_order = 3
-minus_extra_point_for_last_lu_in_order = 1
-
-
-
-
+minus_point_for_belong_to_order = 2
+minus_extra_point_for_last_lu_in_order = 5
 
 
 def create_lu_list(batch):
@@ -177,6 +173,7 @@ def count_finished_orders():
         if len(i) < 1:
             count += 1
     return count
+
 
 def get_lu_amount_of_order_containing_lu(main_list, target_value):
     return [len(sublist) for sublist in main_list if target_value in sublist]
@@ -230,10 +227,12 @@ def get_next_lu(): #generate next lu to queue - it searching LU which start the 
 set_of_open_orders = get_indicates_of_order_containing_lu(batch, first_lu_in_queue(batch, lu_list_set))
 # set_of_open_orders = set_of_open_orders.union(get_indicates_of_order_containing_lu(batch, "WAN-033529"))
 
+lu_amount_remaining =lu_set_length - 1
 
 
 print("set of remaining LU: ", lu_list_set)
 print(lu_set_length - 1, "LU lefts in queue")
+print(23 - lu_amount_remaining, "LU left from shu")
 print(len(batch), "orders waiting in queue (not finished yet)")
 
 print(orders_amount_on_begin - len(batch), "finished orders")
@@ -263,10 +262,13 @@ while orders_amount_on_begin - count_finished_orders() > 0:
     lu_set_length = len(lu_list_set)
     empty_lists = [sublist for sublist in batch if len(sublist) == 0]
     print(lu_set_length, "LU lefts in queue")
+    lu_amount_remaining = lu_set_length
+    print(lu_amount_on_begin - lu_amount_remaining, "LU left from shu")
+
     print(orders_amount_on_begin - count_finished_orders(), "orders waiting in queue (not finished yet)")
     print(count_open_orders - len(empty_lists), " / ", orders_amount_on_begin - count_finished_orders(), " open orders")
     # print("set of open orders: ", set_of_open_orders)
-
+    print(count_finished_orders(), " finished orders")
 
 
 # print(get_lengths_of_lists_containing_value(batch, 'WAN-034972'))
