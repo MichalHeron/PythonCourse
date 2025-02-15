@@ -152,7 +152,7 @@ count_open_orders = 0
 orders_amount_on_begin = len(batch)
 point = 0
 add_point_for_not_belong_to_order = 1
-minus_point_for_belong_to_order = 2
+minus_point_for_belong_to_order = 3
 minus_extra_point_for_last_lu_in_order = 5
 
 
